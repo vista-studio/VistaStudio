@@ -1,113 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <title>Vista Studio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500&display=swap' rel='stylesheet'>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#e9dfd2;color:#1c1b19;font-family:'Inter',sans-serif;overflow-x:hidden}
-.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;display:flex;flex-direction:column;justify-content:space-between;padding:40px 7vw;color:#f7f3ee}
+body{background:#d8cbbd;font-family:'Manrope',sans-serif;color:#3a3129;padding:40px 0}
+.page{width:min(1180px,92%);margin:auto;background:#f7f1e8;box-shadow:0 30px 80px rgba(53,39,26,.12)}
+.hero{position:relative;height:720px;background:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;padding:42px 50px;color:#f9f6f2}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18),rgba(0,0,0,.35))}
+nav,.hero-content{position:relative;z-index:2}
 nav{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:1.4rem;letter-spacing:.4rem;font-weight:300}
-nav ul{display:flex;gap:32px;list-style:none}
-nav a{text-decoration:none;color:#f7f3ee;font-size:.9rem}
-.hero-content{padding-bottom:80px;max-width:700px}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,10vw,8rem);font-weight:400;line-height:.9}
-.hero p{margin-top:20px;font-size:1rem;max-width:520px;color:#ddd2c4;line-height:1.8}
-.btn{display:inline-block;margin-top:35px;padding:16px 30px;border:1px solid rgba(255,255,255,.4);text-decoration:none;color:white;border-radius:100px;backdrop-filter:blur(10px);transition:.4s}
-.btn:hover{background:white;color:black}
-.section{padding:120px 7vw}
-.grid-two{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.section h2{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:500;margin-bottom:20px}
-.section p{line-height:1.9;color:#4f4a43}
-.card-video{height:420px;border-radius:24px;background:url('https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;box-shadow:0 25px 80px rgba(0,0,0,.12)}
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:60px}
-.project{background:#f6f1ea;border-radius:22px;overflow:hidden;transition:.5s;box-shadow:0 15px 40px rgba(0,0,0,.06)}
-.project:hover{transform:translateY(-10px)}
-.project img{width:100%;height:340px;object-fit:cover}
-.project-content{padding:26px}
-.project h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:500}
-.project span{color:#7a7267;font-size:.9rem}
-.quote{background:#1d1a17;color:#f5efe8;text-align:center;padding:140px 10vw}
-.quote h3{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:400;line-height:1.2;max-width:900px;margin:auto}
-.footer{padding:70px 7vw;background:#151311;color:#cbbda9;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
-.footer h4{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400}
+.logo{letter-spacing:.35rem;font-size:1rem}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{text-decoration:none;color:#f3ede7;font-size:.85rem}
+.hero-content{position:absolute;left:50%;top:50%;transform:translate(-50%,-35%);text-align:center;width:80%}
+.hero-content h1{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,9vw,7rem);font-weight:400;letter-spacing:.04rem}
+.hero-content p{margin-top:12px;letter-spacing:.25rem;font-size:.8rem;text-transform:uppercase;color:#e4d8ca}
+.content{padding:80px 70px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.title{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:500;margin-bottom:22px;color:#2f261f}
+.text{line-height:2;color:#75695d;font-size:.95rem;max-width:520px}
+.link{margin-top:28px;display:inline-block;text-decoration:none;color:#2f261f;border-bottom:1px solid #8f7e6d;padding-bottom:4px;font-size:.85rem;letter-spacing:.08rem}
+.video-card{height:300px;background:url('https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop') center/cover;border-radius:2px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:500;margin-bottom:40px}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.project img{width:100%;height:330px;object-fit:cover}
+.project h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;margin-top:14px}
+.process{padding:100px 70px;background:#efe6da;text-align:center}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:50px}
+.circle{width:90px;height:90px;border:1px solid #c6b6a4;border-radius:50%;margin:auto;margin-bottom:20px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2rem;color:#8b7765}
+.process h4{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;margin-bottom:10px}
+.process p{color:#7b6f64;line-height:1.8;font-size:.92rem}
+.footer{padding:70px;text-align:center;background:#201915;color:#d9c8b5}
+.footer h2{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:400;margin-bottom:14px}
+.footer p{color:#af9f8f}
 @media(max-width:900px){
-.grid-two{grid-template-columns:1fr}
-.hero h1{font-size:4rem}
+body{padding:0}
+.page{width:100%}
+.hero{height:560px;padding:30px}
+.content,.process,.footer{padding:50px 28px}
+.grid,.projects,.process-grid{grid-template-columns:1fr}
 nav ul{display:none}
-.section h2,.quote h3{font-size:3rem}
+.hero-content{width:90%}
+.hero-content h1{font-size:4rem}
+.title,.section-title{font-size:2.5rem}
 }
 </style>
 </head>
 <body>
-<section class="hero">
+<div class='page'>
+<section class='hero'>
 <nav>
-<div class="logo">VISTA STUDIO</div>
+<div class='logo'>VISTA STUDIO</div>
 <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Projects</a></li>
-<li><a href="#">Philosophy</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href='#'>Home</a></li>
+<li><a href='#'>Projects</a></li>
+<li><a href='#'>Vision</a></li>
+<li><a href='#'>Contact</a></li>
 </ul>
 </nav>
-<div class="hero-content">
-<h1>Organic Modern Visual Storytelling</h1>
-<p>Vista Studio creates cinematic experiences shaped through architecture, emotion, texture and timeless visual direction.</p>
-<a href="#" class="btn">Enter Experience</a>
+<div class='hero-content'>
+<h1>Vista Studio</h1>
+<p>Luxury Interior Visual Studio</p>
 </div>
 </section>
-<section class="section">
-<div class="grid-two">
+<section class='content'>
+<div class='grid'>
 <div>
-<h2>Our Philosophy</h2>
-<p>We build visual atmospheres that feel intentional, calm and elevated. Every frame is designed with natural movement, luxury minimalism and cinematic rhythm inspired by editorial architecture and modern organic interiors.</p>
+<h2 class='title'>Our Philosophy</h2>
+<p class='text'>Vista Studio develops cinematic visual identities inspired by architecture, modern interiors and timeless organic textures. We approach storytelling with calm pacing, elegant composition and elevated design direction.</p>
+<a href='#' class='link'>View Philosophy</a>
 </div>
-<div class="card-video"></div>
+<div class='video-card'></div>
 </div>
 </section>
-<section class="section">
-<h2>Selected Projects</h2>
-<div class="projects">
-<div class="project">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop">
-<div class="project-content">
-<h3>Luxury Residences</h3>
-<span>Cinematic Architecture</span>
+<section class='content'>
+<h2 class='section-title'>Selected Projects</h2>
+<div class='projects'>
+<div class='project'>
+<img src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop'>
+<h3>High-end Homes</h3>
 </div>
+<div class='project'>
+<img src='https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop'>
+<h3>Organic Interiors</h3>
 </div>
-<div class="project">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
-<div class="project-content">
-<h3>Editorial Interiors</h3>
-<span>Organic Modern</span>
-</div>
-</div>
-<div class="project">
-<img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1200&auto=format&fit=crop">
-<div class="project-content">
+<div class='project'>
+<img src='https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1200&auto=format&fit=crop'>
 <h3>Luxury Lifestyle</h3>
-<span>Visual Direction</span>
-</div>
 </div>
 </div>
 </section>
-<section class="quote">
-<h3>Crafting visual experiences that feel architectural, emotional and timeless.</h3>
+<section class='process'>
+<h2 class='section-title'>The Process</h2>
+<div class='process-grid'>
+<div>
+<div class='circle'>1</div>
+<h4>Creative Vision</h4>
+<p>Understanding the atmosphere, emotion and visual direction behind each story.</p>
+</div>
+<div>
+<div class='circle'>2</div>
+<h4>Visual Production</h4>
+<p>Designing cinematic imagery with elegant pacing and editorial composition.</p>
+</div>
+<div>
+<div class='circle'>3</div>
+<h4>Final Experience</h4>
+<p>Delivering immersive visuals crafted for premium brands and modern spaces.</p>
+</div>
+</div>
 </section>
-<footer class="footer">
-<div>
-<h4>Vista Studio</h4>
-<p>Creative direction & cinematic storytelling.</p>
-</div>
-<div>
-<p>Instagram</p>
-<p>Email</p>
-</div>
+<footer class='footer'>
+<h2>Crafting timeless visual atmospheres.</h2>
+<p>Vista Studio · Creative Direction · Cinematic Storytelling</p>
 </footer>
+</div>
 </body>
 </html>
