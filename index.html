@@ -1,1 +1,706 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Vista Studio</title><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500;600&display=swap' rel='stylesheet'><style>*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:#050505;color:#f5efe6;font-family:Manrope,sans-serif;overflow-x:hidden}nav{position:fixed;top:0;width:100%;z-index:1000;padding:28px 6vw;background:linear-gradient(to bottom,rgba(0,0,0,.78),transparent);backdrop-filter:blur(10px)}nav ul{display:flex;justify-content:center;gap:52px;list-style:none}nav a{text-decoration:none;color:#ebe1d5;font-size:.78rem;letter-spacing:.22rem;text-transform:uppercase;opacity:.88;transition:.3s}nav a:hover{opacity:1;color:#cba76b}section{padding:120px 6vw}.hero{height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden}.hero:before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=2200&auto=format&fit=crop') center/cover no-repeat;filter:brightness(.42)}.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.93),rgba(0,0,0,.28))}.hero-content{position:relative;z-index:2;max-width:1000px;padding:0 6vw}.hero-logo{width:560px;max-width:82vw;margin-bottom:42px;object-fit:contain;filter:drop-shadow(0 0 35px rgba(255,255,255,.04))}.hero h1,.section-title,.overlay h3,.price-card h3,.process-card h3{font-family:'Cormorant Garamond',serif;font-weight:500}.hero h1{font-size:clamp(2.7rem,4.4vw,5rem);line-height:.96;letter-spacing:-.03em;max-width:900px;margin:auto}.hero em,.section-title em{font-style:italic;color:#cba76b}.stats{padding:80px 6vw;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}.stat h2{font-family:'Cormorant Garamond',serif;font-size:3.3rem;font-weight:500;margin-bottom:10px}.stat p{font-size:1rem;line-height:1.7;color:#cabcae}.section-title{font-size:clamp(3rem,5vw,5rem);line-height:1}.section-sub{margin-top:20px;color:#c5b8ab;font-size:1rem;line-height:1.8;max-width:650px}@media(max-width:900px){nav ul{gap:18px;flex-wrap:wrap}.hero-logo{width:300px}.hero h1{font-size:3.2rem}.stats-grid{grid-template-columns:1fr}.section{padding:90px 7vw}}</style></head><body><nav><ul><li><a href='#process'>Process</a></li><li><a href='#portfolio'>Portfolio</a></li><li><a href='#pricing'>Pricing</a></li><li><a href='#contact'>Contact</a></li></ul></nav><section class='hero'><div class='hero-content'><img class='hero-logo' src='logo.png' alt='Vista Studio'><h1>Listings that make people <em>stop scrolling</em></h1></div></section><section class='stats'><div class='stats-grid'><div class='stat'><h2>4K</h2><p>Shot on Sony A7C full-frame professional camera</p></div><div class='stat'><h2>5–7</h2><p>48h rush available for urgent listings</p></div><div class='stat'><h2>3×</h2><p>Listings with video get more buyer contact</p></div><div class='stat'><h2>SFL</h2><p>Boca Raton — serving all of South Florida</p></div></div></section></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vista Studio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:#f5efe6;
+font-family:'Manrope',sans-serif;
+overflow-x:hidden;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+padding:28px 6vw;
+background:linear-gradient(to bottom,rgba(0,0,0,.82),transparent);
+backdrop-filter:blur(10px);
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+gap:52px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#ebe1d5;
+font-size:.78rem;
+letter-spacing:.22rem;
+text-transform:uppercase;
+transition:.3s;
+}
+
+nav a:hover{
+color:#cba76b;
+}
+
+section{
+padding:120px 6vw;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=2200&auto=format&fit=crop') center/cover no-repeat;
+filter:brightness(.42);
+}
+
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,.94),rgba(0,0,0,.25));
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:1200px;
+}
+
+.hero-logo{
+width:700px;
+max-width:88vw;
+margin-bottom:10px;
+object-fit:contain;
+filter:drop-shadow(0 0 35px rgba(255,255,255,.04));
+}
+
+.hero h1,
+.section-title,
+.overlay h3,
+.price-card h3,
+.process-card h3{
+font-family:'Cormorant Garamond',serif;
+font-weight:500;
+}
+
+.hero h1{
+font-size:clamp(2.2rem,3.5vw,4rem);
+line-height:.92;
+letter-spacing:-0.03em;
+max-width:760px;
+margin:auto;
+}
+
+.hero em,
+.section-title em{
+font-style:italic;
+color:#cba76b;
+}
+
+.stats{
+padding:80px 6vw;
+border-top:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+}
+
+.stat h2{
+font-family:'Cormorant Garamond',serif;
+font-size:3rem;
+font-weight:500;
+margin-bottom:10px;
+}
+
+.stat p{
+font-size:.96rem;
+line-height:1.7;
+color:#cabcae;
+}
+
+.section-title{
+font-size:clamp(3rem,5vw,5rem);
+line-height:1;
+}
+
+.section-sub{
+margin-top:20px;
+color:#c5b8ab;
+font-size:1rem;
+line-height:1.8;
+max-width:650px;
+}
+
+.eyebrow{
+font-size:.7rem;
+letter-spacing:.24rem;
+text-transform:uppercase;
+color:#cba76b;
+margin-bottom:12px;
+}
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:22px;
+margin-top:70px;
+}
+
+.process-card{
+background:#0a0a0a;
+border:1px solid rgba(255,255,255,.05);
+padding:38px;
+border-radius:28px;
+}
+
+.process-card h3{
+font-size:2rem;
+margin:18px 0;
+}
+
+.process-card p{
+font-size:.96rem;
+line-height:1.8;
+color:#c7bbaf;
+}
+
+.portfolio-grid{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:22px;
+margin-top:70px;
+}
+
+.portfolio-item{
+position:relative;
+overflow:hidden;
+border-radius:32px;
+}
+
+.portfolio-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:1.2s;
+}
+
+.portfolio-item:hover img{
+transform:scale(1.04);
+}
+
+.large{
+height:720px;
+}
+
+.stack{
+display:grid;
+gap:22px;
+}
+
+.small{
+height:349px;
+}
+
+.overlay{
+position:absolute;
+left:36px;
+bottom:36px;
+}
+
+.overlay h3{
+font-size:2.3rem;
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+margin-top:70px;
+border:1px solid rgba(203,167,107,.15);
+}
+
+.price-card{
+padding:48px;
+border-right:1px solid rgba(203,167,107,.15);
+}
+
+.price-card:last-child{
+border-right:none;
+}
+
+.featured{
+background:#0b0b0b;
+border-top:2px solid #cba76b;
+}
+
+.price-card h3{
+font-size:2.7rem;
+margin-top:14px;
+}
+
+.price{
+font-size:3.3rem;
+color:#cba76b;
+margin:10px 0;
+}
+
+.smalltext{
+font-size:.95rem;
+color:#b7aa9b;
+}
+
+.price-card ul{
+list-style:none;
+margin:34px 0;
+}
+
+.price-card li{
+font-size:.96rem;
+line-height:1.8;
+margin-bottom:12px;
+}
+
+.price-btn{
+display:block;
+text-align:center;
+padding:16px;
+border:1px solid rgba(203,167,107,.25);
+text-decoration:none;
+color:#f5efe6;
+margin-top:32px;
+font-size:.78rem;
+letter-spacing:.16rem;
+text-transform:uppercase;
+}
+
+.featured .price-btn{
+background:#cba76b;
+color:#050505;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:90px;
+margin-top:70px;
+}
+
+.contact-info p,
+.meta p,
+.contact-form input,
+.contact-form textarea{
+font-size:1rem;
+line-height:1.8;
+}
+
+.meta{
+margin-top:55px;
+}
+
+.meta div{
+margin-bottom:40px;
+}
+
+.meta h4,
+.contact-form label{
+font-size:.7rem;
+letter-spacing:.22rem;
+text-transform:uppercase;
+color:#cba76b;
+margin-bottom:12px;
+display:block;
+}
+
+.contact-form{
+display:grid;
+gap:22px;
+}
+
+.contact-form input,
+.contact-form textarea{
+background:#0b0b0b;
+border:1px solid rgba(203,167,107,.16);
+padding:18px;
+color:#f5efe6;
+}
+
+.contact-form textarea{
+min-height:180px;
+}
+
+.submit{
+background:#cba76b;
+color:#050505;
+border:none;
+padding:18px 34px;
+font-size:.82rem;
+letter-spacing:.18rem;
+text-transform:uppercase;
+cursor:pointer;
+}
+
+.footer{
+text-align:center;
+padding:70px 6vw;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+.footer p{
+font-size:.95rem;
+color:#b9aa9a;
+}
+
+@media(max-width:900px){
+
+nav ul{
+gap:18px;
+flex-wrap:wrap;
+}
+
+.hero-logo{
+width:340px;
+}
+
+.hero h1{
+font-size:2.7rem;
+}
+
+.stats-grid,
+.process-grid,
+.portfolio-grid,
+.pricing-grid,
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+section{
+padding:90px 7vw;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<ul>
+<li><a href="#process">Process</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img class="hero-logo" src="logo.png" alt="Vista Studio">
+
+<h1>
+Listings that make people
+<em>stop scrolling</em>
+</h1>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h2>4K</h2>
+<p>Shot on Sony A7C full-frame professional camera</p>
+</div>
+
+<div class="stat">
+<h2>5–7</h2>
+<p>Business day delivery turnaround</p>
+</div>
+
+<div class="stat">
+<h2>3×</h2>
+<p>More inquiries through cinematic content</p>
+</div>
+
+<div class="stat">
+<h2>SFL</h2>
+<p>Serving Boca Raton & South Florida</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="process">
+
+<div class="eyebrow">Process</div>
+
+<h2 class="section-title">
+A cinematic <em>workflow</em>
+</h2>
+
+<div class="process-grid">
+
+<div class="process-card">
+<div class="eyebrow">01</div>
+<h3>Inquiry</h3>
+<p>Reach out through Instagram or the contact form.</p>
+</div>
+
+<div class="process-card">
+<div class="eyebrow">02</div>
+<h3>Shoot Day</h3>
+<p>Luxury-focused filming with cinematic movement and storytelling.</p>
+</div>
+
+<div class="process-card">
+<div class="eyebrow">03</div>
+<h3>Edit</h3>
+<p>Professional color grading and social optimized delivery.</p>
+</div>
+
+<div class="process-card">
+<div class="eyebrow">04</div>
+<h3>Delivery</h3>
+<p>Final assets delivered ready for posting and ads.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="portfolio">
+
+<div class="eyebrow">Portfolio</div>
+
+<h2 class="section-title">
+Curated cinematic <em>moments</em>
+</h2>
+
+<p class="section-sub">
+Architecture, movement and atmosphere designed to feel immersive and premium.
+</p>
+
+<div class="portfolio-grid">
+
+<div class="portfolio-item large">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1800&auto=format&fit=crop">
+<div class="overlay">
+<h3>Luxury Estates</h3>
+</div>
+</div>
+
+<div class="stack">
+
+<div class="portfolio-item small">
+<img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1400&auto=format&fit=crop">
+<div class="overlay">
+<h3>Modern Interiors</h3>
+</div>
+</div>
+
+<div class="portfolio-item small">
+<img src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1400&auto=format&fit=crop">
+<div class="overlay">
+<h3>Architectural Mood</h3>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="pricing">
+
+<div class="eyebrow">Packages & Pricing</div>
+
+<h2 class="section-title">
+Choose your <em>level</em>
+</h2>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<div class="eyebrow">Starter</div>
+
+<h3>Listing</h3>
+
+<div class="price">$600</div>
+
+<div class="smalltext">per project</div>
+
+<ul>
+<li>1 cinematic property video</li>
+<li>3 short reels included</li>
+<li>Vertical + horizontal formats</li>
+<li>Music + captions included</li>
+<li>5–7 business day delivery</li>
+</ul>
+
+<a class="price-btn" href="#contact">
+Get Started
+</a>
+
+</div>
+
+<div class="price-card featured">
+
+<div class="eyebrow">Most Popular</div>
+
+<h3>Growth</h3>
+
+<div class="price">$1,500</div>
+
+<div class="smalltext">monthly retainer</div>
+
+<ul>
+<li>4 cinematic property videos</li>
+<li>8 short reels</li>
+<li>1 personal branding video</li>
+<li>Priority turnaround</li>
+<li>Social optimized delivery</li>
+</ul>
+
+<a class="price-btn" href="#contact">
+Book Now
+</a>
+
+</div>
+
+<div class="price-card">
+
+<div class="eyebrow">Premium</div>
+
+<h3>Authority</h3>
+
+<div class="price">$2,500</div>
+
+<div class="smalltext">monthly retainer</div>
+
+<ul>
+<li>Everything in Growth</li>
+<li>Monthly content strategy</li>
+<li>Neighborhood lifestyle reel</li>
+<li>Analytics insights</li>
+<li>Unlimited revisions</li>
+</ul>
+
+<a class="price-btn" href="#contact">
+Get Started
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="contact-grid">
+
+<div class="contact-info">
+
+<div class="eyebrow">Contact</div>
+
+<h2 class="section-title">
+Let's create your <em>next listing</em>
+</h2>
+
+<p>
+We only take a limited number of monthly clients to maintain cinematic quality.
+</p>
+
+<div class="meta">
+
+<div>
+<h4>Instagram</h4>
+<p>@vistastudio.co</p>
+</div>
+
+<div>
+<h4>Location</h4>
+<p>Boca Raton, Florida</p>
+</div>
+
+<div>
+<h4>Availability</h4>
+<p>Limited monthly bookings available</p>
+</div>
+
+</div>
+
+</div>
+
+<form class="contact-form">
+
+<div>
+<label>Your Name</label>
+<input type="text" placeholder="Jane Smith">
+</div>
+
+<div>
+<label>Instagram or Email</label>
+<input type="text" placeholder="@yourhandle">
+</div>
+
+<div>
+<label>Tell us about your project</label>
+<textarea placeholder="Property details, vision, timeline..."></textarea>
+</div>
+
+<button class="submit">
+Send Inquiry
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer class="footer">
+<p>Vista Studio · Cinematic storytelling for modern luxury real estate.</p>
+</footer>
+
+</body>
+</html>
